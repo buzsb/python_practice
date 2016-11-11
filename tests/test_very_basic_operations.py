@@ -19,12 +19,16 @@ class FactorialTest(unittest.TestCase):
         self.assertEqual(factorial(5), 120)
 
     def test_argument_float(self):
-        with self.assertRaises(ValueError, msg = 'Number is not integral'):
+        with self.assertRaises(ValueError, msg='Number is not integral'):
             factorial(2.4)
+        with self.assertRaisesRegexp(ValueError, "Number is not integral."):
+            factorial(1.5)
 
     def test_argument_less_than_zero(self):
-        with self.assertRaises(ValueError, msg = 'Number is less than 0'):
+        with self.assertRaises(ValueError, msg='Number is less than 0'):
             factorial(-2)
+        with self.assertRaisesRegexp(ValueError, "Number is less than 0."):
+            factorial(-3)
 
 if __name__ == '__main__':
     unittest.main()
