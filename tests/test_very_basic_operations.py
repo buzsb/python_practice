@@ -10,6 +10,7 @@ class AddingTwoNumbersTest(unittest.TestCase):
         self.assertEqual(add(0, 3), 3)
         self.assertEqual(add(-1, 3), 2)
 
+
 class FactorialTest(unittest.TestCase):
 
     def test_equality(self):
@@ -18,11 +19,11 @@ class FactorialTest(unittest.TestCase):
         self.assertEqual(factorial(5), 120)
 
     def test_argument_float(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError, msg = 'Number is not integral'):
             factorial(2.4)
 
     def test_argument_less_than_zero(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError, msg = 'Number is less than 0'):
             factorial(-2)
 
 if __name__ == '__main__':

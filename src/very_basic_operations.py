@@ -2,13 +2,13 @@ def add(a, b):
     """Basic function which adds two numbers"""
     return a + b 
 
+
 def factorial(number):
     n = 1
-    if type(number) != int or number < 0:
-        raise ValueError 
-    else:
-        for i in range(number):
-            n = n * (i+1)
+    if not isinstance(number, int) or number < 0:
+        raise ValueError("Number is less than 0 or number is not integral.")
+    for i in range(number):
+        n = n * (i + 1)
     return n
 
 
