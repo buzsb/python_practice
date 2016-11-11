@@ -1,7 +1,5 @@
-#Basic function which add two numbers
-
-
 def add(a, b):
+    """Basic function which adds two numbers"""
     return a + b 
 
 if __name__ == '__main__':
