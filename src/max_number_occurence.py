@@ -1,6 +1,6 @@
 array = [1, 2, 3, 4, 2, 3, 3, 3]
 
-def repeat_number(array):
+def max_number_occurence(array):
     r_counts = 0 
     number = 0
     for i in array:
@@ -14,4 +14,4 @@ def repeat_number(array):
     return number
 
 if __name__ == '__main__':
-    print repeat_number(array)
+    print max_number_occurence(array)
