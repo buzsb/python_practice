@@ -1,17 +1,23 @@
-array = [1, 2, 3, 4, 2, 3, 3, 3]
+import random
 
-def max_number_occurence(array):
-    r_counts = 0 
-    number = 0
-    for i in array:
-        counter = 0
-        for j in array:
-            if i == j:
-                counter += 1 
-            if counter > r_counts:
-                r_counts = counter
-                number = i 
-    return number
+
+def generated_list():
+    random_generated_list = []
+    while len(random_generated_list) < 10:
+        random_generated_list.append(random.randint(0, 9))
+    return random_generated_list
+
+
+def max_number_occurence():
+    numders_occurensces = {}
+
+    for i in generated_list():
+        if numders_occurensces.has_key(i):
+            numders_occurensces[i] += 1
+        else:
+            numders_occurensces[i] = 1
+    return numders_occurensces
+
 
 if __name__ == '__main__':
-    print max_number_occurence(array)
+    print max_number_occurence()
