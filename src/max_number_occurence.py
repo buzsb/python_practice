@@ -9,20 +9,22 @@ def generated_list():
     return random_generated_list
 
 
-def generated_dictionary():
-    numbers_occurensces = {}
-    random_generated_list = generated_list()
+def generated_dictionary(random_list):
+    numbers_occurrensces = {}
+    random_generated_list = random_list
 
     for i in random_generated_list:
-        if i in  numbers_occurensces:
-            numbers_occurensces[i] += 1
+        if i in  numbers_occurrensces:
+            numbers_occurrensces[i] += 1
         else:
-            numbers_occurensces[i] = 1
-    return numbers_occurensces
+            numbers_occurrensces[i] = 1
+    return numbers_occurrensces
 
 
-def max_number_occurence(generated_dictionary):
-    items_list = generated_dictionary.items()
+def max_number_occurrence(generated_list):
+    dictionary = generated_dictionary(generated_list)
+
+    items_list = dictionary.items()
     sorted_items_list = sorted(items_list, key=lambda max_item_value: max_item_value[1])
 
     result = sorted_items_list[-1]
@@ -33,6 +35,8 @@ def max_number_occurence(generated_dictionary):
         .format(number = result[0], repeats = result[1])
     )
 
+    return result
+
 
 if __name__ == '__main__':
-    max_number_occurence(generated_dictionary())
+    max_number_occurrence(generated_list())
