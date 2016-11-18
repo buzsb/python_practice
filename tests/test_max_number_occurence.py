@@ -27,7 +27,7 @@ class MaxNumberOccurrenceTest(unittest.TestCase):
 
     def test_empty_list(self):
         test_list = []
-        with self.assertRaises(IndexError):
+        with self.assertRaises(ValueError):
             max_number_occurrence(test_list)
 
 if __name__ == '__main__':

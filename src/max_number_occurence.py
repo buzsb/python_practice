@@ -9,19 +9,21 @@ def generated_list():
     return random_generated_list
 
 
-def generated_dictionary(random_list):
-    numbers_occurrensces = {}
-    random_generated_list = random_list
+def generated_dictionary(numbers_list):
+    numbers_occurrences = {}
 
-    for i in random_generated_list:
-        if i in  numbers_occurrensces:
-            numbers_occurrensces[i] += 1
+    for i in numbers_list:
+        if i in  numbers_occurrences:
+            numbers_occurrences[i] += 1
         else:
-            numbers_occurrensces[i] = 1
-    return numbers_occurrensces
+            numbers_occurrences[i] = 1
+    return numbers_occurrences
 
 
 def max_number_occurrence(generated_list):
+    if generated_list == []:
+        raise ValueError
+
     dictionary = generated_dictionary(generated_list)
 
     items_list = dictionary.items()
@@ -32,7 +34,7 @@ def max_number_occurrence(generated_list):
     print (
         'Number {number} have max occurrence in list \n'
         'namely {repeats} times'
-        .format(number = result[0], repeats = result[1])
+        .format(number=result[0], repeats=result[1])
     )
 
     return result
