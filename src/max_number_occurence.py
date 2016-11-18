@@ -1,5 +1,7 @@
 import random
 
+from collections import defaultdict
+
 
 def generated_list():
     random_generated_list = []
@@ -10,13 +12,11 @@ def generated_list():
 
 
 def generated_dictionary(numbers_list):
-    numbers_occurrences = {}
+    numbers_occurrences = defaultdict(int)
 
     for i in numbers_list:
-        if i in  numbers_occurrences:
-            numbers_occurrences[i] += 1
-        else:
-            numbers_occurrences[i] = 1
+        numbers_occurrences[i] += 1
+
     return numbers_occurrences
 
 
