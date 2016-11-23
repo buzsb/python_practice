@@ -1,13 +1,17 @@
 def decorator(function):
     def wrapper(*args, **kwargs):
         print 'Start'
-        function(*args, **kwargs)
-        print 'Finish'
+        result = function(*args, **kwargs)
+        print 'Finish {result}'.format(result=result)
     return wrapper
 
 
 @decorator
 def function():
-    print 'Function works'
+    text = 'Function works'
+    print text
+    return text
 
-function()    
+
+if __name__ == '__main__':
+    function()    
