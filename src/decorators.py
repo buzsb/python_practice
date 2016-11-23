@@ -15,6 +15,7 @@ def function():
     text = 'Function works'
     print text
     return text
+    
 
 def run_time_decorator(func):
     def wrapper(*args, **kwargs):
@@ -26,12 +27,12 @@ def run_time_decorator(func):
         return run_time
     return wrapper
 
+
 @run_time_decorator
 def list_doubler(array):
     result = [i * 2 for i in array]
     print result
     return result
-
 
 
 if __name__ == '__main__':
