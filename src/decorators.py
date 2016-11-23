@@ -1,4 +1,4 @@
-def start_and_finish_function_work_decorator(function):
+def start_and_finish_decorator(func):
     def wrapper(*args, **kwargs):
         print 'Start'
         result = function(*args, **kwargs)
@@ -7,7 +7,7 @@ def start_and_finish_function_work_decorator(function):
     return wrapper
 
 
-@start_and_finish_function_work_decorator
+@start_and_finish_decorator
 def function():
     text = 'Function works'
     print text
