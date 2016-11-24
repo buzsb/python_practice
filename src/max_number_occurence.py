@@ -3,10 +3,10 @@ import random
 from collections import defaultdict
 
 
-def generated_list():
+def generated_list(number):
     random_generated_list = []
-    while len(random_generated_list) < 10:
-        random_generated_list.append(random.randint(0, 9))
+    while len(random_generated_list) < number:
+        random_generated_list.append(random.randint(0, 100))
     print random_generated_list
     return random_generated_list
 
@@ -41,4 +41,4 @@ def max_number_occurrence(generated_list):
 
 
 if __name__ == '__main__':
-    max_number_occurrence(generated_list())
+    max_number_occurrence(generated_list(10))
