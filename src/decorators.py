@@ -16,22 +16,31 @@ def function():
     print text
     return text
     
+def run_time_decorator(func_run_times=1):
+    def run_time_functions(func):
+        def wrapper(*args, **kwargs):
+            summary_run_time = 0
+            for i in range(func_run_times):
+                start_time = time.time()
+                result = func(*args, **kwargs)
+                end_time = time.time()
+                summary_run_time += end_time - start_time
 
-def run_time_decorator(func):
-    def wrapper(*args, **kwargs):
-        start_time = time.time()
-        result = func(*args, **kwargs)
-        end_time = time.time()
-        run_time = end_time - start_time
-        print 'Function runs {run_time} seconds'.format(run_time=run_time)
-        return run_time
-    return wrapper
+            average_run_time = summary_run_time / func_run_times
+            print (
+                'Average {runs} functions performed '
+                'by {time} seconds each'
+                .format(runs=func_run_times, time=average_run_time)
+            )
+            return average_run_time
+        return wrapper
+    return run_time_functions
 
 
-@run_time_decorator
+@run_time_decorator(3)
 def list_doubler(array):
     result = [i * 2 for i in array]
-    print result
+
     return result
 
 
