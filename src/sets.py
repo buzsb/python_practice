@@ -7,4 +7,3 @@ def unique_elements_in_list(array):
 
 if __name__ == '__main__':
     unique_elements_in_list([1, 2, 3, 3, 4, 4])
-    
