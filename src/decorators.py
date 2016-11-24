@@ -16,7 +16,7 @@ def function():
     print text
     return text
     
-def run_time_decorator(func_run_times = 1):
+def run_time_decorator(func_run_times=1):
     def run_time_functions(func):
         def wrapper(*args, **kwargs):
             summary_run_time = 0
