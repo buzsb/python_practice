@@ -1,6 +1,6 @@
 def add(a, b):
     """Basic function which adds two numbers"""
-    return a + b 
+    return a + b
 
 
 def factorial(number):

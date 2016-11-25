@@ -27,7 +27,9 @@ def max_number_occurrence(generated_list):
     dictionary = generated_dictionary(generated_list)
 
     items_list = dictionary.items()
-    sorted_items_list = sorted(items_list, key=lambda max_item_value: max_item_value[1])
+    sorted_items_list = sorted(
+        items_list, key=lambda max_item_value: max_item_value[1]
+    )
 
     result = sorted_items_list[-1]
 

@@ -8,8 +8,10 @@ def unique_elements_in_list(array):
     print unique_elements
     return unique_elements
 
+
 list1 = generated_list(100000)
 list2 = generated_list(100000)
+
 
 def common_elments_in_lists(first_list, second_list):
     common_list = []
@@ -17,6 +19,7 @@ def common_elments_in_lists(first_list, second_list):
         if i in second_list and i not in common_list:
             common_list.append(i)
     return common_list
+
 
 def common_elments_in_lists_set(first_list, second_list):
     common_list = set()
@@ -26,14 +29,16 @@ def common_elments_in_lists_set(first_list, second_list):
             common_list.add(i)
     return common_list
 
+
 @run_time_decorator(30)
 def run_common_elements_in_list(list1, list2):
     common_elments_in_lists(list1, list2)
 
+
 @run_time_decorator(30)
 def run_common_elements_in_list_set(list1, list2):
     common_elments_in_lists_set(list1, list2)
-    
+
 
 if __name__ == '__main__':
     unique_elements_in_list([1, 2, 3, 3, 4, 4])

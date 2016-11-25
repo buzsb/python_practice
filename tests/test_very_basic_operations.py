@@ -26,5 +26,6 @@ class FactorialTest(unittest.TestCase):
         with self.assertRaisesRegexp(ValueError, "Number is less than 0."):
             factorial(-3)
 
+
 if __name__ == '__main__':
     unittest.main()
