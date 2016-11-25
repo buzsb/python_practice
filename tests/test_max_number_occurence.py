@@ -1,7 +1,7 @@
 import unittest
 
-from src.max_number_occurence import generated_dictionary,
-max_number_occurrence
+from src.max_number_occurence import generated_dictionary, \
+    max_number_occurrence
 
 
 class GerneratedDictionaryTest(unittest.TestCase):
