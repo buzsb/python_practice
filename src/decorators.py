@@ -15,14 +15,15 @@ def function():
     text = 'Function works'
     print text
     return text
-    
+
+
 def run_time_decorator(func_run_times=1):
     def run_time_functions(func):
         def wrapper(*args, **kwargs):
             summary_run_time = 0
             for i in range(func_run_times):
                 start_time = time.time()
-                result = func(*args, **kwargs)
+                func(*args, **kwargs)
                 end_time = time.time()
                 summary_run_time += end_time - start_time
 
@@ -45,5 +46,5 @@ def list_doubler(array):
 
 
 if __name__ == '__main__':
-    function() 
+    function()
     list_doubler([2, 3, 4])
