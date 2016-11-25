@@ -1,8 +1,7 @@
 import unittest
 
-from src.sets import unique_elements_in_list,
-common_elments_in_lists,
-common_elments_in_lists_set
+from src.sets import unique_elements_in_list, \
+    common_elments_in_lists, common_elments_in_lists_set
 
 
 class UniqueElementsInListTest(unittest.TestCase):
@@ -48,7 +47,9 @@ class CommonElementsInListSetsTests(unittest.TestCase):
     def test_equality(self):
         list1 = [2, 3, 4, 2, 3]
         list2 = [3, 4, 6, 9, 3, 4, 2]
-        self.assertEqual(common_elments_in_lists_set(list1, list2), [2, 3, 4])
+        self.assertEqual(
+            common_elments_in_lists_set(list1, list2), set([2, 3, 4])
+        )
 
 
 if __name__ == '__main__':
