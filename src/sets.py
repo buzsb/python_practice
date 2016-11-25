@@ -9,8 +9,8 @@ def unique_elements_in_list(array):
     return unique_elements
 
 
-list1 = generated_list(100000)
-list2 = generated_list(100000)
+list1 = generated_list(10000)
+list2 = generated_list(10000)
 
 
 def common_elments_in_lists(first_list, second_list):
@@ -43,9 +43,9 @@ def run_common_elements_in_list_set(list1, list2):
 if __name__ == '__main__':
     unique_elements_in_list([1, 2, 3, 3, 4, 4])
 
-    print common_elments_in_lists(list1, list2)
+    common_elments_in_lists(list1, list2)
 
-    print common_elments_in_lists_set(list1, list2)
+    common_elments_in_lists_set(list1, list2)
 
     run_common_elements_in_list(list1, list2)
 

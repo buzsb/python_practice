@@ -7,7 +7,6 @@ def generated_list(number):
     random_generated_list = []
     while len(random_generated_list) < number:
         random_generated_list.append(random.randint(0, 100))
-    print random_generated_list
     return random_generated_list
 
 
