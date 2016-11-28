@@ -1,5 +1,5 @@
-def range_generator(start, end=0):
-    if end == 0:
+def range_generator(start, end=None):
+    if end is None:
         end = start
         start = 0
     while start < end:
