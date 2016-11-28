@@ -1,6 +1,6 @@
 def range_generator(end):
     i = 0
-    while i <= end:
+    while i < end:
         yield i
         i += 1
 
