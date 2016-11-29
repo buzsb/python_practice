@@ -1,6 +1,6 @@
 import unittest
 
-from src.generators import range_generator
+from src.generators import range_generator, iterator
 
 
 class RangeGeneratorTest(unittest.TestCase):
@@ -16,6 +16,17 @@ class RangeGeneratorTest(unittest.TestCase):
         for i in range_generator(3, 9):
             test_list.append(i)
         self.assertEqual(test_list, range(3, 9))
+
+
+class IteratorTest(unittest.TestCase):
+
+    def test_equality(self):
+        final_list = [0, 1, 2, 3]
+        self.assertEqual(iterator(range_generator(4)), final_list)
+
+    def test_second_equality(self):
+        final_list = [3, 4, 5, 6, 7, 8, 9]
+        self.assertEqual(iterator(range_generator(3, 10)), final_list)
 
 
 if __name__ == '__main__':
