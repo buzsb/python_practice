@@ -5,7 +5,7 @@ class Square(object):
 
     def __repr__(self):
         return ('Square with length {length} has area {area}'
-                .format(length=self.length, area=self.length ** 2)
+                .format(length=self.length, area=self.square_area())
                 )
 
     def square_area(self):
@@ -15,4 +15,4 @@ class Square(object):
 if __name__ == '__main__':
     a = Square(5)
     print a.square_area()
-    print a.__repr__()
+    print a
