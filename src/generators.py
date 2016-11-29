@@ -7,14 +7,14 @@ def range_generator(start, end=None):
         start += 1
 
 
-def iterator(generator):
+def list_from_generator(generator):
     generated_list = []
-    try:
-        while True:
+    while True:
+        try:
             i = generator.next()
             generated_list.append(i)
-    except StopIteration:
-        pass
+        except StopIteration:
+            break
     return generated_list
 
 
@@ -22,4 +22,4 @@ if __name__ == '__main__':
     for x in range_generator(5):
         print x
 
-    print iterator(range_generator(3, 10))
+    print list_from_generator(range_generator(3, 10))
