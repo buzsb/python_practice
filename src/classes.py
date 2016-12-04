@@ -15,7 +15,7 @@ class Square(object):
 class SquareWithColor(Square):
 
     def __init__(self, length, color):
-        self.length = length
+        super(SquareWithColor, self).__init__(length)
         self.color = color
 
 
