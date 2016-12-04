@@ -12,7 +12,16 @@ class Square(object):
         return self.length ** 2
 
 
+class SquareWithColor(Square):
+
+    def __init__(self, length, color):
+        self.length = length
+        self.color = color
+
+
 if __name__ == '__main__':
     a = Square(5)
     print a.square_area()
     print a
+    b = SquareWithColor(4, 'red')
+    print b.square_area()
