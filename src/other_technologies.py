@@ -1,3 +1,6 @@
+from functools import reduce
+
+
 def cubed_list(array):
     cubed_list = list(map(lambda i: i**3, array))
     return cubed_list
@@ -18,8 +21,14 @@ def other_bigger_than_n(array, n):
     return bigger_list
 
 
+def product_list(array):
+    product = reduce((lambda x, y: x * y), array)
+    return product
+
+
 if __name__ == '__main__':
     print cubed_list([2, 3, 4])
     print other_cubed_list([2, 3, 4])
     print bigger_than_n([2, 3, 5, 7, 8], 5)
     print other_bigger_than_n([2, 3, 5, 7, 8], 5)
+    print product_list([2, 3, 4])
