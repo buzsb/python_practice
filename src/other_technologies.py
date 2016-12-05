@@ -1,6 +1,3 @@
-from functools import reduce
-
-
 def cubed_list(array):
     cubed_list = list(map(lambda i: i**3, array))
     return cubed_list
