@@ -1,5 +1,5 @@
 def cubed_list(array):
-    cubed_list = list(map(lambda i: i**3, array))
+    cubed_list = map(lambda i: i**3, array)
     return cubed_list
 
 
@@ -9,7 +9,7 @@ def other_cubed_list(array):
 
 
 def bigger_than_n(array, n):
-    bigger_list = list(filter(lambda i: i > n, array))
+    bigger_list = filter(lambda i: i > n, array)
     return bigger_list
 
 
