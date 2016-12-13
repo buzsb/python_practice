@@ -29,7 +29,7 @@ class LastCrtNumberTest(unittest.TestCase):
 class IsThereOnlyLoveTest(unittest.TestCase):
 
     def test_correct_work(self):
-        string = 'love'
+        string = 'lovve'
         self.assertTrue(is_there_only_love(string))
 
     def test_return_none(self):
