@@ -4,7 +4,9 @@ import re
 def first_crt_uppercase(string):
     match = re.match(r'^[A-Z]', string)
     if match:
-        print "Yes sting starts with uppercase character"
+        print "Yes string starts with uppercase character"
+    else:
+        return False
     return match
 
 
@@ -12,6 +14,8 @@ def last_crt_number(string):
     match = re.match(r'.*\d', string)
     if match:
         print "Last character in string is number"
+    else:
+        return False
     return match
 
 
@@ -19,6 +23,8 @@ def is_there_only_love(string):
     match = re.match(r'[love]*$', string)
     if match:
         print "only love"
+    else:
+        return False
     return match
 
 

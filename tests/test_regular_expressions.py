@@ -12,7 +12,7 @@ class FirstCrtUppercaseTest(unittest.TestCase):
 
     def test_return_none(self):
         string = 'test string'
-        self.assertIsNone(first_crt_uppercase(string))
+        self.assertFalse(first_crt_uppercase(string))
 
 
 class LastCrtNumberTest(unittest.TestCase):
@@ -23,7 +23,7 @@ class LastCrtNumberTest(unittest.TestCase):
 
     def test_return_none(self):
         string = 'test string'
-        self.assertIsNone(last_crt_number(string))
+        self.assertFalse(last_crt_number(string))
 
 
 class IsThereOnlyLoveTest(unittest.TestCase):
@@ -34,7 +34,7 @@ class IsThereOnlyLoveTest(unittest.TestCase):
 
     def test_return_none(self):
         string = 'what is love baby dont hurt me'
-        self.assertIsNone(is_there_only_love(string))
+        self.assertFalse(is_there_only_love(string))
 
 
 if __name__ == '__main__':
