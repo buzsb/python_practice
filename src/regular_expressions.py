@@ -2,7 +2,7 @@ import re
 
 
 def first_crt_uppercase(string):
-    match = re.match(r'^[A-Z]', string)
+    match = re.match(r'[A-Z]', string)
     if match:
         print "Yes string starts with uppercase character"
     else:
