@@ -1,20 +1,19 @@
 def biggest_area(array):
     result = 0
-    for i, item in enumerate(array):
-        if item == 0:
+    for i, height in enumerate(array):
+        if height == 0:
             continue
         length = 1
-        height = item
         position = i
         while position < len(array) - 1:
-            if array[position + 1] >= item:
+            if array[position + 1] >= height:
                 length += 1
             else:
                 break
             position += 1
         position = i
         while position > 0:
-            if array[position - 1] >= item:
+            if array[position - 1] >= height:
                 length += 1
             else:
                 break
