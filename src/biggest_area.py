@@ -4,7 +4,7 @@ def biggest_area(array):
         if item == 0:
             continue
         length = 1
-        heigth = item
+        height = item
         position = i
         while position < len(array) - 1:
             if array[position + 1] >= item:
@@ -12,18 +12,19 @@ def biggest_area(array):
             else:
                 break
             position += 1
-        while i > 0:
-            if array[i - 1] >= item:
+        position = i
+        while position > 0:
+            if array[position - 1] >= item:
                 length += 1
             else:
                 break
-            i -= 1
-        print length, heigth
-        temporary_result = length * heigth
+            position -= 1
+        print length, height
+        temporary_result = length * height
         if temporary_result > result:
             result = temporary_result
     return result
 
 
 if __name__ == '__main__':
-    print biggest_area([4, 2, 3, 4])
+    print biggest_area([4, 0, 3, 4])
