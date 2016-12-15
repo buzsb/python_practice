@@ -8,15 +8,14 @@ def generated_list(number):
 
 
 def fifteenki(height=4, length=4):
-    generated_lst = generated_list(height * length)
+    array = generated_list(height * length)
+    if 0 in array:
+        array[array.index(0)] = ''
     matrix = []
-    for i in xrange(0, len(generated_lst), length):
-        matrix.append(generated_lst[i:i + length])
-    print matrix
+    for i in xrange(0, len(array), length):
+        matrix.append(array[i:i + length])
     for row in matrix:
-        for colunm in row:
-            print ('{:>3}').format(colunm)
-        print
+        print ('\n'.join([''.join(['{:>3}'.format(item) for item in row])]))
 
 
 if __name__ == '__main__':
