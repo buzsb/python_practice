@@ -1,7 +1,7 @@
-def repeated_words(words_array):
+def repeated_words(words):
     repeated = set()
     result = set()
-    for i in words_array:
+    for i in words:
         i = i.lower()
         if i in repeated:
             result.add(i)
