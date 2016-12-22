@@ -1,8 +1,8 @@
 def repeated_words(words_array):
-    lower_case_words_array = [i.lower() for i in words_array]
     repeated = set()
     result = set()
-    for i in lower_case_words_array:
+    for i in words_array:
+        i = i.lower()
         if i in repeated:
             result.add(i)
         else:
