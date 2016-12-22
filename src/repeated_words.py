@@ -1,12 +1,12 @@
-def repeated_words(words):
+def repeated_words(words_array):
     repeated = set()
     result = set()
-    for i in words:
-        i = i.lower()
-        if i in repeated:
-            result.add(i)
+    for word in words_array:
+        word = word.lower()
+        if word in repeated:
+            result.add(word)
         else:
-            repeated.add(i)
+            repeated.add(word)
     return result
 
 
