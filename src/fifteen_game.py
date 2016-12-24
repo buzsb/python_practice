@@ -11,17 +11,31 @@ class FifteenGame(object):
     def generated_list(self, number):
         array = range(number)
         random.shuffle(array)
-        return array
+        array[array.index(0)] = ''
+        field = []
+        for i in xrange(0, len(array), self.length):
+            field.append(array[i:i + self.length])
+        return field
 
     def print_field(self):
-        self.field[self.field.index(0)] = ''
-        matrix = []
-        for i in xrange(0, len(self.field), self.length):
-            matrix.append(self.field[i:i + self.length])
-        for row in matrix:
+        for row in self.field:
             print ''.join(['{:>3}'.format(item) for item in row])
+
+    def move_up(self):
+        coordinates = []
+        for i in self.field:
+            if '' in i:
+                coordinates.append(self.field.index(i))
+                coordinates.append(i.index(''))
+        x = coordinates[0]
+        y = coordinates[1]
+        if x == 0:
+            return False
+        self.field[x][y], self.field[x - 1][y] = self.field[x - 1][y], self.field[x][y]
+        self.print_field()
 
 
 if __name__ == '__main__':
     a = FifteenGame()
     a.print_field()
+    a.move_up()
