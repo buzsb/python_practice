@@ -36,7 +36,6 @@ class FifteenGame(object):
         if self.empty_y == 0:
             return False
         print ''
-        print self.empty_y, self.empty_x
         self.swap(self.empty_y, self.empty_x, self.empty_y - 1, self.empty_x)
 
         self.empty_y = self.empty_y - 1
@@ -71,6 +70,26 @@ class FifteenGame(object):
 
 
 if __name__ == '__main__':
-    a = FifteenGame()
-    a.print_field()
-    a.move_right()
+    def play_game():
+        a = FifteenGame()
+        a.print_field()
+        print (
+            'Use w - to move up,\n'
+            's - to move down,\n'
+            'a - to move left,\n'
+            'd - to move right,\n'
+            'and e - to exit game\n'
+        )
+        while True:
+            move = raw_input()
+            if move == 'w':
+                a.move_up()
+            if move == 's':
+                a.move_down()
+            if move == 'a':
+                a.move_left()
+            if move == 'd':
+                a.move_right()
+            if move == 'e':
+                break
+    play_game()
