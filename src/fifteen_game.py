@@ -66,27 +66,27 @@ class FifteenGame(object):
 
 
 def play_game():
-        a = FifteenGame()
-        a.print_field()
-        print (
-            'Use w - to move up,\n'
-            's - to move down,\n'
-            'a - to move left,\n'
-            'd - to move right,\n'
-            'and e - to exit game\n'
-        )
-        while True:
-            move = raw_input()
-            if move == 'w':
-                a.move_up()
-            if move == 's':
-                a.move_down()
-            if move == 'a':
-                a.move_left()
-            if move == 'd':
-                a.move_right()
-            if move == 'e':
-                break
+    a = FifteenGame()
+    a.print_field()
+    print (
+        'Use w - to move up,\n'
+        's - to move down,\n'
+        'a - to move left,\n'
+        'd - to move right,\n'
+        'and e - to exit game\n'
+    )
+    while True:
+        move = raw_input()
+        if move == 'w':
+            a.move_up()
+        if move == 's':
+            a.move_down()
+        if move == 'a':
+            a.move_left()
+        if move == 'd':
+            a.move_right()
+        if move == 'e':
+            break
 
 
 if __name__ == '__main__':
