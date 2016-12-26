@@ -35,7 +35,6 @@ class FifteenGame(object):
     def move_up(self):
         if self.empty_y == 0:
             return False
-        print ''
         self.swap(self.empty_y, self.empty_x, self.empty_y - 1, self.empty_x)
 
         self.empty_y = self.empty_y - 1
@@ -44,7 +43,6 @@ class FifteenGame(object):
     def move_down(self):
         if self.empty_y == self.height - 1:
             return False
-        print ''
         self.swap(self.empty_y, self.empty_x, self.empty_y + 1, self.empty_x)
 
         self.empty_y = self.empty_y + 1
@@ -53,7 +51,6 @@ class FifteenGame(object):
     def move_left(self):
         if self.empty_x == 0:
             return False
-        print ''
         self.swap(self.empty_y, self.empty_x - 1, self.empty_y, self.empty_x)
 
         self.empty_x = self.empty_x - 1
@@ -62,15 +59,13 @@ class FifteenGame(object):
     def move_right(self):
         if self.empty_x == self.length - 1:
             return False
-        print ''
         self.swap(self.empty_y, self.empty_x + 1, self.empty_y, self.empty_x)
 
         self.empty_x = self.empty_x + 1
         self.print_field()
 
 
-if __name__ == '__main__':
-    def play_game():
+def play_game():
         a = FifteenGame()
         a.print_field()
         print (
@@ -92,4 +87,7 @@ if __name__ == '__main__':
                 a.move_right()
             if move == 'e':
                 break
+
+
+if __name__ == '__main__':
     play_game()
