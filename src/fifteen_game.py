@@ -8,8 +8,6 @@ class FifteenGame(object):
         self.length = length
         self.field = self.generated_list(self.height * self.length)
         self.empty_coordinates()
-        self.empty_x = 0
-        self.empty_y = 0
 
     def generated_list(self, number):
         array = range(number)
@@ -30,50 +28,49 @@ class FifteenGame(object):
                 self.empty_y = self.field.index(i)
                 self.empty_x = i.index('')
 
+    def swap(self, y1, x1, y2, x2):
+        self.field[y1][x1], self.field[y2][x2] = (
+            self.field[y2][x2], self.field[y1][x1])
+
     def move_up(self):
         if self.empty_y == 0:
             return False
         print ''
-        print self.empty_x, self.empty_y
-        self.field[self.empty_x][self.empty_y], self.field[self.empty_x][self.empty_y - 1] = (
-            self.field[self.empty_x][self.empty_y - 1], self.field[self.empty_x][self.empty_y])
+        print self.empty_y, self.empty_x
+        self.swap(self.empty_y, self.empty_x, self.empty_y - 1, self.empty_x)
 
         self.empty_y = self.empty_y - 1
         self.print_field()
 
     def move_down(self):
-        if self.empty_y == len(self.field) - 1:
+        if self.empty_y == self.height - 1:
             return False
         print ''
-        self.field[self.x][self.y], self.field[self.x + 1][self.y] = (
-            self.field[self.x + 1][self.y], self.field[self.x][self.y])
+        self.swap(self.empty_y, self.empty_x, self.empty_y + 1, self.empty_x)
 
-        self.x = self.x + 1
+        self.empty_y = self.empty_y + 1
         self.print_field()
 
     def move_left(self):
         if self.empty_x == 0:
             return False
         print ''
-        self.field[self.x][self.y], self.field[self.x][self.y - 1] = (
-            self.field[self.x][self.y - 1], self.field[self.x][self.y])
+        self.swap(self.empty_y, self.empty_x - 1, self.empty_y, self.empty_x)
 
-        self.x = self.y - 1
+        self.empty_x = self.empty_x - 1
         self.print_field()
 
     def move_right(self):
-        if self.empty_x == len(self.field[0]) - 1:
+        if self.empty_x == self.length - 1:
             return False
         print ''
-        self.field[self.x][self.y], self.field[self.x][self.y + 1] = (
-            self.field[self.x][self.y + 1], self.field[self.x][self.y])
+        self.swap(self.empty_y, self.empty_x + 1, self.empty_y, self.empty_x)
 
-        self.x = self.y + 1
+        self.empty_x = self.empty_x + 1
         self.print_field()
 
 
 if __name__ == '__main__':
     a = FifteenGame()
-    a.empty_coordinates()
     a.print_field()
-    a.move_up()
+    a.move_right()
