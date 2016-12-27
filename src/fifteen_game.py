@@ -72,7 +72,6 @@ class FifteenGame(object):
                     continue
                 if number != y * self.width + x + 1:
                     return False
-                print number, y * self.width + x + 1
         return True
 
 
@@ -90,19 +89,13 @@ def play_game(height=4, width=4):
         move = raw_input()
         if move == 'w':
             a.move_up()
-            if a.win_check():
-                break
         if move == 's':
             a.move_down()
-            if a.win_check():
-                break
         if move == 'a':
             a.move_left()
-            if a.win_check():
-                break
         if move == 'd':
             a.move_right()
-            if a.win_check():
+        if a.win_check():
                 break
         if move == 'e':
             break
