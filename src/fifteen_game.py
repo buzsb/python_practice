@@ -38,7 +38,6 @@ class FifteenGame(object):
         self.swap(self.empty_y, self.empty_x, self.empty_y - 1, self.empty_x)
 
         self.empty_y = self.empty_y - 1
-        self.print_field()
 
     def move_down(self):
         if self.empty_y == self.height - 1:
@@ -46,7 +45,6 @@ class FifteenGame(object):
         self.swap(self.empty_y, self.empty_x, self.empty_y + 1, self.empty_x)
 
         self.empty_y = self.empty_y + 1
-        self.print_field()
 
     def move_left(self):
         if self.empty_x == 0:
@@ -54,7 +52,6 @@ class FifteenGame(object):
         self.swap(self.empty_y, self.empty_x - 1, self.empty_y, self.empty_x)
 
         self.empty_x = self.empty_x - 1
-        self.print_field()
 
     def move_right(self):
         if self.empty_x == self.width - 1:
@@ -62,12 +59,10 @@ class FifteenGame(object):
         self.swap(self.empty_y, self.empty_x + 1, self.empty_y, self.empty_x)
 
         self.empty_x = self.empty_x + 1
-        self.print_field()
 
     def win_check(self):
-        for i in self.field:
-            for x, number in enumerate(i):
-                y = self.field.index(i)
+        for y, row in enumerate(self.field):
+            for x, number in enumerate(row):
                 if number == '':
                     continue
                 if number != y * self.width + x + 1:
@@ -95,11 +90,12 @@ def play_game(height=4, width=4):
             a.move_left()
         if move == 'd':
             a.move_right()
+        a.print_field()
         if a.win_check():
-                break
+            break
         if move == 'e':
             break
 
 
 if __name__ == '__main__':
-    play_game(2, 2)
+    play_game()
