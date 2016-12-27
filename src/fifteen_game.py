@@ -27,6 +27,7 @@ class FifteenGame(object):
             if '' in i:
                 self.empty_y = self.field.index(i)
                 self.empty_x = i.index('')
+                break
 
     def swap(self, y1, x1, y2, x2):
         self.field[y1][x1], self.field[y2][x2] = (
