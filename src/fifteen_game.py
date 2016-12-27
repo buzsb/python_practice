@@ -65,18 +65,19 @@ class FifteenGame(object):
         self.print_field()
 
     def win_check(self):
-        check = False
+        check = []
         for i in self.field:
             for x, number in enumerate(i):
                 y = self.field.index(i)
                 if number == '':
                     continue
                 if number == y * self.width + x + 1:
-                    check = True
+                    check.append(True)
                 else:
-                    check = False
+                    check.append(False)
                 print number, y * self.width + x + 1, check
-        return check
+        if False not in check:
+            return True
 
 
 def play_game(height=4, width=4):
