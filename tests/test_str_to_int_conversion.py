@@ -15,11 +15,13 @@ class IntegerConversionTests(unittest.TestCase):
 
     def test_string_with_leters(self):
         test_string = '12l3'
-        self.assertEqual(integer_conversion(test_string), 123)
+        with self.assertRaises(ValueError):
+            integer_conversion(test_string)
 
     def test_second_string_with_leters(self):
         test_string = '32i67k'
-        self.assertEqual(integer_conversion(test_string), 3267)
+        with self.assertRaises(ValueError):
+            integer_conversion(test_string)
 
 
 if __name__ == '__main__':
