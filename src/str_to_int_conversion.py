@@ -1,11 +1,13 @@
-def integer_conversion(string_number):
+def conversion_string_to_integer(string_number):
     result = 0
     for i, digit in enumerate(string_number):
-        if ord(digit) < 48 or ord(digit) > 58:
+        if ord(digit) < ord('0') or ord(digit) > ord('9'):
             raise ValueError
-        result += (ord(digit) - 48) * 10 ** (len(string_number) - 1 - i)
+        result += (
+            (ord(digit) - ord('0')) * (10 ** (len(string_number) - 1 - i))
+        )
     return result
 
 
 if __name__ == '__main__':
-    print integer_conversion('123')
+    print conversion_string_to_integer('123')
