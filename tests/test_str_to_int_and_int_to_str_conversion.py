@@ -1,6 +1,7 @@
 import unittest
 
-from src.str_to_int_conversion import conversion_string_to_integer
+from src.str_to_int_and_int_to_str_conversion import \
+    conversion_string_to_integer
 
 
 class IntegerConversionTests(unittest.TestCase):
