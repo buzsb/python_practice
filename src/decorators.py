@@ -3,7 +3,9 @@ import time
 
 def start_and_finish_decorator(func):
     def wrapper(*args, **kwargs):
+        print 'Start'
         result = func(*args, **kwargs)
+        print 'Finished with result {result}'.format(result=result)
         return result
     return wrapper
 
