@@ -30,11 +30,14 @@ class TestsConversionIntegerToString(unittest.TestCase):
     def test_equality(self):
         self.assertEqual(conversion_integer_to_string(123), '123')
 
+    def test_one_number_argument(self):
+        self.assertEqual(conversion_integer_to_string(3), '3')
+
     def test_second_equality(self):
         self.assertEqual(conversion_integer_to_string(34905), '34905')
 
     def test_type_equality(self):
-        self.assertEqual(type(conversion_integer_to_string(34905)), str)
+        self.assertIsInstance(conversion_integer_to_string(34905), str)
 
 
 if __name__ == '__main__':

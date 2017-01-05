@@ -29,16 +29,15 @@ def conversion_integer_to_string(number):
     Returns:
         str: Converted string
     """
-    string_digits = []
+    string_of_digits = ''
     while number >= 10:
         digit = number % 10
-        string_digits.insert(0, chr(ord('0') + digit))
+        string_of_digits = chr(ord('0') + digit) + string_of_digits
         number = number / 10
-    string_digits.insert(0, chr(ord('0') + number))
-    return ''.join(string_digits)
+    string_of_digits = chr(ord('0') + number) + string_of_digits
+    return string_of_digits
 
 
 if __name__ == '__main__':
     print conversion_string_to_integer('123')
     print conversion_integer_to_string(10763)
-    print type(conversion_integer_to_string(10763))
