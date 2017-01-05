@@ -21,6 +21,14 @@ def conversion_string_to_integer(string_number):
 
 
 def conversion_integer_to_string(number):
+    """Converts integer to string.
+
+    Args:
+        number (int): Number that would be converted to string.
+
+    Returns:
+        str: Converted string
+    """
     string_digits = []
     while number >= 10:
         digit = number % 10
