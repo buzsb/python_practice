@@ -18,7 +18,6 @@ def biggest_area(array):
             else:
                 break
             position -= 1
-        print length, height
         temporary_result = length * height
         if temporary_result > result:
             result = temporary_result

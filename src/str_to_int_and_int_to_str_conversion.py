@@ -27,7 +27,7 @@ def conversion_integer_to_string(number):
         number (int): Number that would be converted to string.
 
     Returns:
-        str: Converted string
+        str: Converted string.
     """
     string_of_digits = ''
     while number >= 10:

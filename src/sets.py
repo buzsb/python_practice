@@ -5,7 +5,6 @@ from decorators import run_time_decorator
 def unique_elements_in_list(array):
 
     unique_elements = [i for i in set(array)]
-    print unique_elements
     return unique_elements
 
 
@@ -41,7 +40,7 @@ def run_common_elements_in_list_set(list1, list2):
 
 
 if __name__ == '__main__':
-    unique_elements_in_list([1, 2, 3, 3, 4, 4])
+    print unique_elements_in_list([1, 2, 3, 3, 4, 4])
 
     common_elments_in_lists(list1, list2)
 

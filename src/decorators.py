@@ -3,9 +3,7 @@ import time
 
 def start_and_finish_decorator(func):
     def wrapper(*args, **kwargs):
-        print 'Start'
         result = func(*args, **kwargs)
-        print 'Finished with result {result}'.format(result=result)
         return result
     return wrapper
 
@@ -13,7 +11,6 @@ def start_and_finish_decorator(func):
 @start_and_finish_decorator
 def function():
     text = 'Function works'
-    print text
     return text
 
 
@@ -28,11 +25,6 @@ def run_time_decorator(func_run_times=1):
                 summary_run_time += end_time - start_time
 
             average_run_time = summary_run_time / func_run_times
-            print (
-                'Average {runs} functions performed '
-                'by {time} seconds each'
-                .format(runs=func_run_times, time=average_run_time)
-            )
             return average_run_time
         return wrapper
     return run_time_functions
@@ -46,5 +38,5 @@ def list_doubler(array):
 
 
 if __name__ == '__main__':
-    function()
-    list_doubler([2, 3, 4])
+    print function()
+    print list_doubler([2, 3, 4])

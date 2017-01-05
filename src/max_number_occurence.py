@@ -32,14 +32,8 @@ def max_number_occurrence(generated_list):
 
     result = sorted_items_list[-1]
 
-    print (
-        'Number {number} have max occurrence in list \n'
-        'namely {repeats} times'
-        .format(number=result[0], repeats=result[1])
-    )
-
     return result
 
 
 if __name__ == '__main__':
-    max_number_occurrence(generated_list(10))
+    print max_number_occurrence(generated_list(10))
