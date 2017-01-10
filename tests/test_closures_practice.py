@@ -15,7 +15,7 @@ class NumberInRangeCheckTest(unittest.TestCase):
 
     def test_number_out_of_range(self):
         tested_number = make_check_if_number_in_range(1, 10)
-        self.assertIsNone(tested_number(14))
+        self.assertFalse(tested_number(14))
 
 
 if __name__ == '__main__':
