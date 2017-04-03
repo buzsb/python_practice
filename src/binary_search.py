@@ -1,6 +1,8 @@
 def binary_search(sorted_list, searched_element):
+    if sorted_list == []:
+        return None
     start = 0
-    end = len(sorted_list)
+    end = len(sorted_list) - 1
     while start <= end:
         middle_element = (start + end) / 2
         if sorted_list[middle_element] == searched_element:
@@ -14,5 +16,5 @@ def binary_search(sorted_list, searched_element):
 
 
 if __name__ == '__main__':
-    array = [1, 2, 3, 4, 5, 7]
-    print binary_search(array, 6)
+    array = [1, 2, 3, 5]
+    print binary_search(array, 5)
