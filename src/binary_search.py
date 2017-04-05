@@ -1,5 +1,5 @@
 def binary_search(sorted_list, searched_element):
-    if sorted_list == []:
+    if not sorted_list:
         return None
     start = 0
     end = len(sorted_list) - 1
@@ -16,7 +16,7 @@ def binary_search(sorted_list, searched_element):
 
 
 def recursive_binary_search(sorted_list, searched_element, start=0, end=None):
-    if sorted_list == []:
+    if not sorted_list:
         return None
     if end is None:
         end = len(sorted_list) - 1
@@ -37,7 +37,7 @@ def recursive_binary_search(sorted_list, searched_element, start=0, end=None):
 
 
 def another_recursive_binary_search(sorted_list, searched_element):
-    if sorted_list == []:
+    if not sorted_list:
         return None
     if len(sorted_list) == 1 and sorted_list[0] is not searched_element:
         return None
