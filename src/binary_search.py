@@ -36,7 +36,27 @@ def recursive_binary_search(sorted_list, searched_element, start=0, end=None):
         )
 
 
+def another_recursive_binary_search(sorted_list, searched_element):
+    if sorted_list == []:
+        return None
+    start = 0
+    end = len(sorted_list) - 1
+    middle_element = (start + end) / 2
+    if sorted_list[middle_element] == searched_element:
+        return middle_element
+
+    if sorted_list[middle_element] < searched_element:
+        return another_recursive_binary_search(
+            sorted_list[middle_element:], searched_element
+        )
+    else:
+        return another_recursive_binary_search(
+            sorted_list[:middle_element], searched_element
+        )
+
+
 if __name__ == '__main__':
     array = [1, 2, 3, 5]
     print binary_search(array, 5)
     print recursive_binary_search(array, 1)
+    print another_recursive_binary_search(array, 3)
