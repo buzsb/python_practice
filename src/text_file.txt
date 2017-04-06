@@ -1,0 +1,3 @@
+this Is test file, with some randome text.
+this text should have words that are repeated ?
+and \ diferent symbols NOT A word, text in file 
