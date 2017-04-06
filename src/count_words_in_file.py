@@ -5,7 +5,6 @@ def file_lines_to_words_list_converter():
         line_list = line.split()
         for word in line_list:
             word = list(word)
-            print word[-1]
             while ord(word[-1]) < ord('A') or ord(word[-1]) > ord('z'):
                 word = word[:-1]
                 if len(word) == 0:
