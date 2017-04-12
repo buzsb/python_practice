@@ -1,4 +1,5 @@
 import os.path
+from collections import defaultdict
 
 
 def file_lines_to_words_list_converter(file_name):
@@ -16,13 +17,10 @@ def file_lines_to_words_list_converter(file_name):
 
 
 def words_counter(words_list):
-    repeated_words_dict = {}
+    repeated_words_dict = defaultdict(int)
     for word in words_list:
         word = word.lower()
-        if word not in repeated_words_dict:
-            repeated_words_dict[word] = 1
-        else:
-            repeated_words_dict[word] += 1
+        repeated_words_dict[word] += 1
     list_of_repeated_words = repeated_words_dict.items()
     sorted_list_of_repeated_words = sorted(
         list_of_repeated_words, key=lambda tup: tup[1], reverse=True
