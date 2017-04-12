@@ -1,15 +1,34 @@
 def file_lines_to_words_list_converter():
-    file = open("src/text_file.txt")
+    with open("src/text_file.txt") as file:
+        text = file.read()
     words_list = []
-    text = ''.join(file.readlines())
     start_word = 0
-    for i, digit in enumerate(text):
-        if ord(digit) < ord('A') or ord(digit) > ord('z'):
+    for i, char in enumerate(text):
+        if ord(char) < ord('A') or ord(char) > ord('z'):
             word = text[start_word:i]
-            words_list.append(word)
-            start_word = i + 1
+            if word != '':
+                words_list.append(word)
+                start_word = i + 1
+            else:
+                start_word = i + 1
+                continue
     return words_list
 
 
+def words_counter(words_list):
+    repeated_words_dict = {}
+    for word in words_list:
+        word = word.lower()
+        if word not in repeated_words_dict:
+            repeated_words_dict[word] = 1
+        else:
+            repeated_words_dict[word] += 1
+    list_of_repeated_words = repeated_words_dict.items()
+    sorted_list_of_repeated_words = sorted(
+        list_of_repeated_words, key=lambda tup: tup[1], reverse=True
+    )
+    return sorted_list_of_repeated_words[:3]
+
+
 if __name__ == '__main__':
-    print file_lines_to_words_list_converter()
+    print words_counter(file_lines_to_words_list_converter())
