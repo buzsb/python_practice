@@ -1,17 +1,17 @@
-def file_lines_to_words_list_converter():
-    with open("src/text_file.txt") as file:
+import os.path
+
+
+def file_lines_to_words_list_converter(file_name):
+    with open(os.path.join(os.path.dirname(__file__), file_name)) as file:
         text = file.read()
     words_list = []
     start_word = 0
     for i, char in enumerate(text):
         if ord(char) < ord('A') or ord(char) > ord('z'):
             word = text[start_word:i]
+            start_word = i + 1
             if word != '':
                 words_list.append(word)
-                start_word = i + 1
-            else:
-                start_word = i + 1
-                continue
     return words_list
 
 
@@ -31,4 +31,4 @@ def words_counter(words_list):
 
 
 if __name__ == '__main__':
-    print words_counter(file_lines_to_words_list_converter())
+    print words_counter(file_lines_to_words_list_converter('text_file.txt'))
