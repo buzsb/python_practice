@@ -13,28 +13,12 @@ class FileLinesToWordsListConverterTest(unittest.TestCase):
             file_text_list
         )
 
-    def test_not_eaqual(self):
-        file_text_list = ['test', 'test', 'test', 'file']
-        self.assertNotEqual(
-            file_lines_to_words_list_converter('../tests/test_text_file.txt'),
-            file_text_list
-        )
-
 
 class WordCounterTest(unittest.TestCase):
 
     def test_correct_work(self):
         file_text_list = [('test', 3), ('file', 2), ('text', 1)]
         self.assertListEqual(
-            words_counter(
-                file_lines_to_words_list_converter('../tests/test_text_file.txt')
-            ),
-            file_text_list
-        )
-
-    def test_not_eaqual(self):
-        file_text_list = [('test', 3), ('file', 2)]
-        self.assertNotEqual(
             words_counter(
                 file_lines_to_words_list_converter('../tests/test_text_file.txt')
             ),
