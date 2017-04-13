@@ -2,6 +2,8 @@ import re
 
 
 def password_validity_checker(passwords_list):
+    if type(passwords_list) is not str:
+        return None
     good_passwords_list = []
     passwords = passwords_list.split(',')
     for password in passwords:

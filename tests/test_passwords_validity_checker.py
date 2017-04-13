@@ -26,6 +26,18 @@ class PasswordValidityCheckerTest(unittest.TestCase):
             password_validity_checker(passwords), result
         )
 
+    def test_parametr_is_number(self):
+        passwords = 123
+        self.assertIsNone(password_validity_checker(passwords))
+
+    def test_parametr_list(self):
+        passwords = [1, 2, 3]
+        self.assertIsNone(password_validity_checker(passwords))
+
+    def test_parametr_is_dict(self):
+        passwords = {'a': 1, 'b': 2}
+        self.assertIsNone(password_validity_checker(passwords))
+
 
 if __name__ == '__main__':
     unittest.main()
