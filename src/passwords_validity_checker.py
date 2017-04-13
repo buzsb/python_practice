@@ -2,13 +2,11 @@ import re
 
 
 def password_validity_checker(passwords_list):
-    if type(passwords_list) is not str:
-        return None
     good_passwords_list = []
     passwords = passwords_list.split(',')
     for password in passwords:
         password = password.strip()
-        if len(password) < 6 and len(password) > 12:
+        if len(password) < 6 or len(password) > 12:
             continue
         elif not re.search(r'[A-Z]', password):
             continue

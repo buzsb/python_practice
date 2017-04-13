@@ -26,17 +26,40 @@ class PasswordValidityCheckerTest(unittest.TestCase):
             password_validity_checker(passwords), result
         )
 
-    def test_parametr_is_number(self):
-        passwords = 123
-        self.assertIsNone(password_validity_checker(passwords))
+    def test_too_long_pasword(self):
+        passwords = 'LongGoodPassword1$'
+        result = []
+        self.assertListEqual(
+            password_validity_checker(passwords), result
+        )
 
-    def test_parametr_list(self):
-        passwords = [1, 2, 3]
-        self.assertIsNone(password_validity_checker(passwords))
+    def test_pasword_without_numbers(self):
+        passwords = 'GoodPass$'
+        result = []
+        self.assertListEqual(
+            password_validity_checker(passwords), result
+        )
 
-    def test_parametr_is_dict(self):
-        passwords = {'a': 1, 'b': 2}
-        self.assertIsNone(password_validity_checker(passwords))
+    def test_pasword_without_big_chars(self):
+        passwords = 'goodpass1$'
+        result = []
+        self.assertListEqual(
+            password_validity_checker(passwords), result
+        )
+
+    def test_pasword_without_smal_chars(self):
+        passwords = '234456AA1$'
+        result = []
+        self.assertListEqual(
+            password_validity_checker(passwords), result
+        )
+
+    def test_pasword_without_symbols(self):
+        passwords = 'goodpass1'
+        result = []
+        self.assertListEqual(
+            password_validity_checker(passwords), result
+        )
 
 
 if __name__ == '__main__':
