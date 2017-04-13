@@ -3,7 +3,7 @@ import re
 
 def password_validity_checker(passwords_list):
     good_passwords_list = []
-    passwords = passwords_list.split(', ')
+    passwords = passwords_list.split(',')
     for password in passwords:
         if len(password) < 6 and len(password) > 12:
             continue
@@ -16,7 +16,7 @@ def password_validity_checker(passwords_list):
         elif not re.search(r'[$#@]', password):
             continue
         else:
-            good_passwords_list.append(password)
+            good_passwords_list.append(password.strip())
     return good_passwords_list
 
 
